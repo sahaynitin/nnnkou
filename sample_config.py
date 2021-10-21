@@ -37,7 +37,7 @@ class Config(object):
     # database uri (mongodb)
     DATABASE_URL = os.environ.get("DATABASE_URL", "")
     #updates channel username
-    MUST_JOIN = os.environ.get('MUST_JOIN', None)
+    MUST_JOIN = os.environ.get("MUST_JOIN", "")
     if MUST_JOIN.startswith("@"):
         MUST_JOIN = MUST_JOIN.replace("@", "")
     #your channel username
