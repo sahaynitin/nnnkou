@@ -1,6 +1,5 @@
 from forcesub import must_join
 
-
 @Client.on_message(~filters.edited & filters.incoming & filters.private, group=-1)
 async def must_join_channel(bot: Client, msg: Message):
     if msg.from_user.id in (await all_banned()):
