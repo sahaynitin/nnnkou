@@ -190,18 +190,18 @@ async def yt_dlp_call_back(bot, update):
             )
             # ref: message from @tellybots_support
             start_time = time.time()
-            # try to upload file
             if tg_send_type == "audio":
-                duration = await Mdata03(download_directory)
-                thumbnail = await Gthumb01(bot, update)
+                await update.message.reply_to_message.reply_chat_action("upload_audio")
                 await bot.send_audio(
                     chat_id=update.message.chat.id,
                     audio=download_directory,
                     caption=description,
                     parse_mode="HTML",
                     duration=duration,
-                    thumb=thumbnail,
-                    reply_to_message_id=update.message.reply_to_message.message_id,
+                    # performer=response_json["uploader"],
+                    # title=response_json["title"],
+                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('⚙ Join Updates Channel ⚙', url='https://telegram.me/FayasNoushad')]]),
+                    thumb=thumb_image_path,
                     progress=progress_for_pyrogram,
                     progress_args=(
                         Translation.UPLOAD_START,
@@ -210,13 +210,14 @@ async def yt_dlp_call_back(bot, update):
                     )
                 )
             elif tg_send_type == "file":
-                thumbnail = await Gthumb01(bot, update)
+                await update.message.reply_to_message.reply_chat_action("upload_document")
                 await bot.send_document(
                     chat_id=update.message.chat.id,
                     document=download_directory,
-                    thumb=thumbnail,
+                    thumb=thumb_image_path,
                     caption=description,
                     parse_mode="HTML",
+                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('⚙ Join Updates Channel ⚙', url='https://telegram.me/tellybots_4u')]]),
                     reply_to_message_id=update.message.reply_to_message.message_id,
                     progress=progress_for_pyrogram,
                     progress_args=(
@@ -226,8 +227,8 @@ async def yt_dlp_call_back(bot, update):
                     )
                 )
             elif tg_send_type == "vm":
-                width, duration = await Mdata02(download_directory)
-                thumbnail = await Gthumb02(bot, update, duration, download_directory)
+                await update.message.reply_to_message.reply_chat_action("upload_video_note")
+                
                 await bot.send_video_note(
                     chat_id=update.message.chat.id,
                     video_note=download_directory,
@@ -243,9 +244,8 @@ async def yt_dlp_call_back(bot, update):
                     )
                 )
             elif tg_send_type == "video":
-                 width, height, duration = await Mdata01(download_directory)
-                 thumbnail = await Gthumb02(bot, update, duration, download_directory)
-                 await bot.send_video(
+                await update.message.reply_to_message.reply_chat_action("upload_video")
+                await bot.send_video(
                     chat_id=update.message.chat.id,
                     video=download_directory,
                     caption=description,
@@ -253,8 +253,9 @@ async def yt_dlp_call_back(bot, update):
                     duration=duration,
                     width=width,
                     height=height,
-                    thumb=thumbnail,
                     supports_streaming=True,
+                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('⚙ Join Updates Channel ⚙', url='https://telegram.me/tellybots_4u')]]),
+                    thumb=thumb_image_path,
                     reply_to_message_id=update.message.reply_to_message.message_id,
                     progress=progress_for_pyrogram,
                     progress_args=(
