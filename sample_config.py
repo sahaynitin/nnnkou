@@ -36,5 +36,5 @@ class Config(object):
     SESSION_NAME = os.environ.get("SESSION_NAME", "")
     # database uri (mongodb)
     DATABASE_URL = os.environ.get("DATABASE_URL", "")
-    MUST_JOIN = os.environ.get("MUST_JOIN", "")
+    # mongodb url
    
