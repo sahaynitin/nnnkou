@@ -31,7 +31,7 @@ from database.access import clinton
 from PIL import Image
 
 
-async def youtube_dl_call_back(bot, update):
+async def yt_dlp_call_back(bot, update):
     cb_data = update.data
     # yt_dlp extractors
     tg_send_type, yt_dlp_format, yt_dlp_ext = cb_data.split("|")
@@ -48,7 +48,7 @@ async def youtube_dl_call_back(bot, update):
         return False
     yt_dlp_url = update.message.reply_to_message.text
     custom_file_name = str(response_json.get("title")) + \
-        "_" + youtube_dl_format + "." + youtube_dl_ext
+        "_" + yt_dlp_format + "." + yt_dlp_ext
     yt_dlp_username = None
     yt_dlp_password = None
     if "|" in yt_dlp_url:
