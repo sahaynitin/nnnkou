@@ -118,7 +118,7 @@ async def yt_dlp_call_back(bot, update):
         ]
     else:
         # command_to_exec = ["yt-dlp", "-f", yt_dlp_format, "--hls-prefer-ffmpeg", "--recode-video", "mp4", "-k", yt_dlp_url, "-o", download_directory]
-        minus_f_format = youtube_dl_format
+        minus_f_format = yt_dlp_format
         if "youtu" in yt_dlp_url:
             minus_f_format = yt_dlp_format + "+bestaudio"
         command_to_exec = [
