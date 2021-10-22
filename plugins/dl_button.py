@@ -88,7 +88,7 @@ async def ddl_call_back(bot, update):
             await download_coroutine(
                 bot,
                 session,
-                youtube_dl_url,
+                yt_dlp_url,
                 download_directory,
                 update.message.chat.id,
                 update.message.message_id,
@@ -122,7 +122,7 @@ async def ddl_call_back(bot, update):
                 message_id=update.message.message_id
             )
         else:
-            # ref: message from @SOURCES_CODES
+            # ref: message from @tellybotsupport
             start_time = time.time()
             # try to upload file
             if tg_send_type == "audio":
