@@ -3,7 +3,7 @@
 A simple url uploader bot with permenent thumbnail support
 
 ```
-Scrapped some code from @SpEcHIDe's AnyDLBot Repository
+Scrapped some code from @SpEcHIDe's AnyDLBot  and From Clinton Abraham Url Uploader Bot Repo Repository
 Please fork this repository don't import code
 Made with Python3
 (C) @FayasNoushad
@@ -50,3 +50,4 @@ python3 bot.py
 * [Fayas Noushad](https://github.com/FayasNoushad)
 * [Shrimadhav UK](https://github.com/SpEcHIDe)
 * [Pyrogram](https://github.com/pyrogram/pyrogram)
+* [Clinton Abraham]
