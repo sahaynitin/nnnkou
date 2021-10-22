@@ -112,7 +112,7 @@ async def yt_dlp_call_back(bot, update):
             "--prefer-ffmpeg",
             "--extract-audio",
             "--audio-format", yt_dlp_ext,
-            "--audio-quality", youtube_dl_format,
+            "--audio-quality", yt_dlp_format,
             yt_dlp_url,
             "-o", download_directory
         ]
