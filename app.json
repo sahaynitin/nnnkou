@@ -51,8 +51,8 @@
       "value": "",
       "required": false
     },
-    "UPDATE_CHANNEL": {
-      "description": "For Force Subscribe. Paste your Update channel USERNAME (without @)..",
+    "UPDATES_CHANNEL": {
+      "description": "For Force Subscribe. Paste your Channel Id",
       "value": "",
       "required": false
     },
