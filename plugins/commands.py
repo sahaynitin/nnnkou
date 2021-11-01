@@ -7,7 +7,7 @@ from translation import Translation
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import FloodWait, UserNotParticipant
-from database.adduser import Adduser #from plugins.forcesub import ForceSub
-from plugins.forcesub import ForceSub
+
+
 
 
