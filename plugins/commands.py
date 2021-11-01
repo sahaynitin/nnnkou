@@ -7,7 +7,7 @@ from translation import Translation
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import FloodWait, UserNotParticipant
-from helper_funcs.forcesub import ForceSub
+from helper_funcs.forcesub import ForceSub, UserNotParticipant
 
 @Client.on_message(filters.command(["start"]) & filters.private)
 async def start(bot, update):
