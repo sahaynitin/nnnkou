@@ -22,5 +22,5 @@ async def start(bot, update):
         text=Translation.START_TEXT.format(update.from_user.mention),
         parse_mode="html",
         disable_web_page_preview=True,
-        reply_to_message_id=update.message_id,
-        reply_markup=Translation.START_BUTTONS
+        reply_to_message_id=update.message_id
+        #reply_markup=Translation.START_BUTTONS#
