@@ -51,26 +51,10 @@ async def echo(bot, update):
             )
 @Clinton.on_message(filters.private & filters.regex(pattern=".*http.*"))
 async def echo(bot, update):
-    await AddUser(bot, update)
-    #update_channel = Config.UPDATE_CHANNEL
-    #if update_channel:
-        #try:
-           #user = await bot.get_chat_member(update_channel, update.chat.id)
-            #if user.status == "kicked":
-               #await update.reply_text("Sorry, You are **BANNED**")
-               #return
-        #except UserNotParticipant:
-            #await update.reply_text(f"Join @{update_channel} To Use Me")
-            #await update.reply_text(
-                #text="**Join My Updates Channel to use Me**",
-                #reply_markup=InlineKeyboardMarkup([
-                    #[ InlineKeyboardButton(text="Join My Updates Channel", url=f"https://t.me/{update_channel}")]
-              #])
-            #)
-            #return
-        #except Exception:
-            #await update.reply_text("Something Wrong. Contact @Tellybots_support")
-            #return
+        await AddUser(bot, update)
+    forcesub = await ForceSub(bot, update)
+    if forcesub == 400:
+        return
     imog = await update.reply_text("Processing...⚡", reply_to_message_id=update.message_id)
     yt_dlp_username = None
     yt_dlp_password = None
