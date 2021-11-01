@@ -29,7 +29,7 @@ from hachoir.parser import createParser
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserNotParticipant
 from pyrogram.errors import FloodWait, UserNotParticipant
-
+from plugins.forcesub import ForceSub
 @Clinton.on_message(filters.private & filters.regex(pattern=".*http.*"))
 async def echo(bot, update):
         await AddUser(bot, update)
