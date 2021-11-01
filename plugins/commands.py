@@ -6,7 +6,8 @@ else:
 from translation import Translation
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-
+from pyrogram.errors import FloodWait, UserNotParticipant
+from plugins.forcesub import ForceSub
 @Client.on_message(filters.command(["start"]) & filters.private)
 async def start(bot, update):
 await AddUser(bot, update)
