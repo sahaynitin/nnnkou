@@ -28,14 +28,11 @@ async def ForceSub(bot, message):
     except UserNotParticipant:
         await bot.send_message(
             chat_id=message.from_user.id,
-            text="**Please Join My Updates Channel To Use Me!**\n\nDue to Overload, Only Channel Subscribers Can Use Me!",
+            text="**Please Join My Updates Channel To Use Me !**",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton("🤖 Join Updates Channel 🤖", url=invite_link.invite_link)
-                    ],
-                    [
-                        InlineKeyboardButton("🔄 Refresh 🔄", callback_data="refreshmeh")
                     ]
                 ]
             ),
