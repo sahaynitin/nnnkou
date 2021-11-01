@@ -22,6 +22,17 @@ async def start(bot, update):
 
 @Client.on_message(filters.command(["help"]) & filters.private)
 async def help(bot, update):
-forcesub = await ForceSub(bot, update)
+    forcesub = await ForceSub(bot, update)
+    if forcesub == 400:
+        return
+    await update.reply_text(
+        text=Translation.HELP_TEXT,
+        disable_web_page_preview=True,
+        reply_markup=Translation.HELP_BUTTONS
+    )
+
+@Client.on_message(filters.command(["about"]) & filters.private)
+async def about(bot, update):
+    forcesub = await ForceSub(bot, update)
     if forcesub == 400:
         return
