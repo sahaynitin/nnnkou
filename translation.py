@@ -3,9 +3,15 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 class Translation(object):
 
     START_TEXT = """
-Hello {} , I'am a url to telegram file or media uploader bot with permanent thumbnail support.
+Hey {}
 
-Made by @FayasNoushad
+I am Telegram Most Powerful Url Uploader Bot 
+
+I can Upload Any Link in File or Video
+
+Use Help Command to Know How to Use me.
+
+Made With 💕 By @Tellybots_4u
 """
     HELP_TEXT = """
 <b><u>Link to Media or File</u></b>
@@ -20,46 +26,46 @@ Made by @FayasNoushad
 <b><u>Show Thumbnail</u></b>
 ➠ Send /showthumb to view custom thumbnail.
 
-Made by @FayasNoushad
+Made With 💕 By @Tellybots_4u
 """
     ABOUT_TEXT = """
-- **Bot :** `URL Uploader`
-- **Creator :** [Fayas](https://telegram.me/TheFayas)
-- **Channel :** [Fayas Noushad](https://telegram.me/FayasNoushad)
-- **Credits :** `Everyone in this journey`
-- **Source :** [Click here](https://github.com/FayasNoushad/URL-Uploader)
-- **Language :** [Python3](https://python.org)
-- **Library :** [Pyrogram v1.2.0](https://pyrogram.org)
-- **Server :** [Heroku](https://heroku.com)
+- **🤖 Bot :** URL Uploader\n
+- **👲 Developer :** [Tellybots_4u](https://telegram.me/tellybots_4u)\n
+- **👥 Channel :** [Fayas Noushad](https://telegram.me/tellybots_4u)\n
+- **❄️ Credits :** Everyone in this journey\n
+- **🍴 Source :** [Click here](https://t.me/tellybots_digital)\n
+- **📝 Language :** [Python3](https://python.org)\n
+- **📚 Library :** [Pyrogram v1.2.0](https://pyrogram.org)\n
+- **🌟 Server :** [Heroku](https://heroku.com)\n
 """
     START_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('Channel', url='https://telegram.me/FayasNoushad'),
-        InlineKeyboardButton('Feedback', url='https://telegram.me/TheFayas')
+        InlineKeyboardButton('🤖 Update Channel', url='https://telegram.me/tellybots_4u'),
+        InlineKeyboardButton('💬 Support Group', url='https://telegram.me/tellybots_support')
         ],[
-        InlineKeyboardButton('Help', callback_data='help'),
-        InlineKeyboardButton('About', callback_data='about'),
-        InlineKeyboardButton('Close', callback_data='close')
+        InlineKeyboardButton('❔ Help', callback_data='help'),
+        InlineKeyboardButton('👲 About', callback_data='about'),
+        InlineKeyboardButton('⛔ Close', callback_data='close')
         ]]
     )
     HELP_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('Home', callback_data='home'),
-        InlineKeyboardButton('About', callback_data='about'),
-        InlineKeyboardButton('Close', callback_data='close')
+        InlineKeyboardButton('🏡 Home', callback_data='home'),
+        InlineKeyboardButton('👲 About', callback_data='about'),
+        InlineKeyboardButton('⛔ Close', callback_data='close')
         ]]
     )
     ABOUT_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('Home', callback_data='home'),
-        InlineKeyboardButton('Help', callback_data='help'),
-        InlineKeyboardButton('Close', callback_data='close')
+        InlineKeyboardButton('🏡 Home', callback_data='home'),
+        InlineKeyboardButton('❔ Help', callback_data='help'),
+        InlineKeyboardButton('⛔ Close', callback_data='close')
         ]]
     )
     FORMAT_SELECTION = """<b>Select the desired format:</b> <a href='{}'>file size might be approximate</a>
     
 Send your custum thumbnail if required.
-You can use /delthumb to delete the auto-generated thumbnail."""
+You can use /delthumbnail to delete the auto-generated thumbnail."""
     CHECKING_LINK = "<code>Analysing Your Link</code>⏳"
     BANNED_USER_TEXT = "<code>You are Banned!</code>"
     SET_CUSTOM_USERNAME_PASSWORD = """If you want to download premium videos, provide in the following format:
