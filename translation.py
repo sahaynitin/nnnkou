@@ -3,30 +3,30 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 class Translation(object):
 
     START_TEXT = """
-Hey {}
+<b>Hey {} </b>
 
-I am Telegram Most Powerful Url Uploader Bot 
+<b>I am Telegram Most Powerful Url Uploader Bot</b>
 
-I can Upload Any Link in File or Video
+<b>I can Upload Any Link in File or Video</b>
 
-Use Help Command to Know How to Use me.
+<b>Use Help Command to Know How to Use me</b>
 
-Made With 💕 By @Tellybots_4u
+<b>Made With 💕 By </b><b>@Tellybots_4u</b>
 """
     HELP_TEXT = """
 <b><u>Link to Media or File</u></b>
-➠ Send a link for upload to telegram file or media.
+➠ Send a link for upload to telegram file or media.</b>
 
 <b><u>Set Thumbnail</u></b>
-➠ Send a photo to make it as permanent thumbnail.
+➠ Send a photo to make it as permanent thumbnail.</b>
 
 <b><u>Deleting Thumbnail</u></b>
-➠ Send /delthumb to deleting thumbnail.
+➠ Send /delthumb to deleting thumbnail.</b>
 
 <b><u>Show Thumbnail</u></b>
-➠ Send /showthumb to view custom thumbnail.
+➠ <b>Send /showthumb to view custom thumbnail.</b>
 
-Made With 💕 By @Tellybots_4u
+<b>Made With 💕 By</b><b>@Tellybots_4u</b>
 """
     ABOUT_TEXT = """
 - **🤖 Bot :** URL Uploader\n
@@ -44,7 +44,6 @@ Made With 💕 By @Tellybots_4u
         InlineKeyboardButton('💬 Support Group', url='https://telegram.me/tellybots_support')
         ],[
         InlineKeyboardButton('❔ Help', callback_data='help'),
-        InlineKeyboardButton('👲 About', callback_data='about'),
         InlineKeyboardButton('⛔ Close', callback_data='close')
         ]]
     )
