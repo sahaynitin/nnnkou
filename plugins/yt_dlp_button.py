@@ -68,7 +68,7 @@ async def yt_dlp_call_back(bot, update):
                 elif entity.type == "url":
                     o = entity.offset
                     l = entity.length
-                    yt_dlp_url = youtube_dl_url[o:o + l]
+                    yt_dlp_url = yt_dlp_url[o:o + l]
         if yt_dlp_url is not None:
             yt_dlp_url = yt_dlp_url.strip()
         if custom_file_name is not None:
@@ -169,7 +169,7 @@ async def yt_dlp_call_back(bot, update):
         os.remove(save_ytdl_json_path)
         end_one = datetime.now()
         time_taken_for_download = (end_one -start).seconds
-        file_size = Config.TG_MAX_FILE_SIZE + 10000000
+        file_size = Config.TG_MAX_FILE_SIZE + 0
         try:
             file_size = os.stat(download_directory).st_size
         except FileNotFoundError as exc:
