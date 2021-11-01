@@ -33,11 +33,11 @@ async def ForceSub(bot, message):
                 [
                     [
                         InlineKeyboardButton("🤖 Join Updates Channel 🤖", url=invite_link.invite_link)
+                    ],
+                    [
+                        InlineKeyboardButton("🔄 Refresh 🔄", callback_data="refreshmeh")
                     ]
-                ],
-                        [
-                            InlineKeyboardButton("🔄 Refresh 🔄", callback_data="refreshmeh")
-                        ]
+                ]
             ),
             parse_mode="markdown",
             reply_to_message_id=message.message_id,
