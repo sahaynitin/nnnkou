@@ -42,7 +42,7 @@ async def about(bot, update):
         reply_markup=Translation.ABOUT_BUTTONS
     )
 @Client.on_callback_query(filters.regex('^refreshmeh$'))
-async def refreshmeh_cb(bot, message):
+async def refreshmeh_cb(bot, Update):
     if Config.UPDATES_CHANNEL:
         invite_link = await bot.create_chat_invite_link(int(Config.UPDATES_CHANNEL))
         try:
