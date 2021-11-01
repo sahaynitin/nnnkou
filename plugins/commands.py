@@ -14,3 +14,8 @@ async def start(bot, update):
     forcesub = await ForceSub(bot, update)
     if forcesub == 400:
         return
+await update.reply_text(
+        text=Translation.START_TEXT.format(update.from_user.mention),
+        disable_web_page_preview=True,
+        reply_markup=Translation.START_BUTTONS
+    )
