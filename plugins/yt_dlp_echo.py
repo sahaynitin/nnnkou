@@ -33,9 +33,6 @@ from plugins.forcesub import ForceSub
 @Clinton.on_message(filters.private & filters.regex(pattern=".*http.*"))
 async def echo(bot, update):
         await AddUser(bot, update)
-    forcesub = await ForceSub(bot, update)
-    if forcesub == 400:
-        return
     imog = await update.reply_text("Processing...⚡", reply_to_message_id=update.message_id)
     yt_dlp_username = None
     yt_dlp_password = None
