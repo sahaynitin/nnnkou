@@ -29,10 +29,9 @@ from hachoir.parser import createParser
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserNotParticipant
 from pyrogram.errors import FloodWait, UserNotParticipant
-from plugins.forcesub import ForceSub
+
 @Clinton.on_message(filters.private & filters.regex(pattern=".*http.*"))
 async def echo(bot, update):
-        await AddUser(bot, update)
     imog = await update.reply_text("Processing...⚡", reply_to_message_id=update.message_id)
     yt_dlp_username = None
     yt_dlp_password = None
