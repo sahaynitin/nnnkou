@@ -1,4 +1,4 @@
- © @ShriMadhav Uk | @Tellybots_4u | @Fayasnoushad
+ ShriMadhav Uk | Tellybots_4u | Fayasnoushad
 
 import logging
 logging.basicConfig(level=logging.DEBUG,
