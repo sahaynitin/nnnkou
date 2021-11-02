@@ -68,24 +68,24 @@ async def yt_dlp_call_back(bot, update):
                 elif entity.type == "url":
                     o = entity.offset
                     l = entity.length
-                    youtube_dl_url = youtube_dl_url[o:o + l]
-        if youtube_dl_url is not None:
-            youtube_dl_url = youtube_dl_url.strip()
+                    yt_dlp_url = yt_dlp_url[o:o + l]
+        if yt_dlp_url is not None:
+            yt_dlp_url = youtube_dlp_url.strip()
         if custom_file_name is not None:
             custom_file_name = custom_file_name.strip()
-        if youtube_dl_username is not None:
-            youtube_dl_username = youtube_dl_username.strip()
-        if youtube_dl_password is not None:
-            youtube_dl_password = youtube_dl_password.strip()
+        if yt_dlp_username is not None:
+            yt_dlp_username = yt_dlp_username.strip()
+        if yt_dlp_password is not None:
+            yt_dlp_password = yt_dlp_password.strip()
 
     else:
         for entity in update.message.reply_to_message.entities:
             if entity.type == "text_link":
-                youtube_dl_url = entity.url
+                yt_dlp_url = entity.url
             elif entity.type == "url":
                 o = entity.offset
                 l = entity.length
-                youtube_dl_url = youtube_dl_url[o:o + l]
+                yt_dlp_url = yt_dlp_url[o:o + l]
     await bot.edit_message_text(
         text=Translation.DOWNLOAD_START,
         chat_id=update.message.chat.id,
@@ -101,40 +101,40 @@ async def yt_dlp_call_back(bot, update):
     command_to_exec = []
     if tg_send_type == "audio":
         command_to_exec = [
-            "youtube-dl",
+            "yt-dlp",
             "-c",
             "--max-filesize", str(Config.TG_MAX_FILE_SIZE),
             "--prefer-ffmpeg",
             "--extract-audio",
-            "--audio-format", youtube_dl_ext,
-            "--audio-quality", youtube_dl_format,
-            youtube_dl_url,
+            "--audio-format", yt_dlp_ext,
+            "--audio-quality", yt_dlp_format,
+            yt_dlp_url,
             "-o", download_directory
         ]
     else:
-        minus_f_format = youtube_dl_format
-        if "youtu" in youtube_dl_url:
-            minus_f_format = youtube_dl_format + "+bestaudio"
+        minus_f_format = yt_dlp_format
+        if "youtu" in yt_dlp_url:
+            minus_f_format = yt_dlp_format + "+bestaudio"
         command_to_exec = [
-            "youtube-dl",
+            "yt-dlp",
             "-c",
             "--max-filesize", str(Config.TG_MAX_FILE_SIZE),
             "--embed-subs",
             "-f", minus_f_format,
-            "--hls-prefer-ffmpeg", youtube_dl_url,
+            "--hls-prefer-ffmpeg", yt_dlp_url,
             "-o", download_directory
         ]
     if Config.HTTP_PROXY != "":
         command_to_exec.append("--proxy")
         command_to_exec.append(Config.HTTP_PROXY)
-    if youtube_dl_username is not None:
+    if yt_dlp_username is not None:
         command_to_exec.append("--username")
-        command_to_exec.append(youtube_dl_username)
-    if youtube_dl_password is not None:
+        command_to_exec.append(yt_dlp_username)
+    if yt_dlp_password is not None:
         command_to_exec.append("--password")
-        command_to_exec.append(youtube_dl_password)
+        command_to_exec.append(yt_dlp_password)
     command_to_exec.append("--no-warnings")
-    if "hotstar" in youtube_dl_url:
+    if "hotstar" in yt_dlp_url:
         command_to_exec.append("--geo-bypass-country")
         command_to_exec.append("IN")
 
@@ -165,7 +165,7 @@ async def yt_dlp_call_back(bot, update):
             pass
         end_one = datetime.now()
         time_taken_for_download = (end_one -start).seconds
-        file_size = Config.TG_MAX_FILE_SIZE + 1
+        file_size = Config.TG_MAX_FILE_SIZE + 3999
         try:
             file_size = os.stat(download_directory).st_size
         except FileNotFoundError as exc:
