@@ -36,4 +36,6 @@ class Config(object):
     SESSION_NAME = os.environ.get("SESSION_NAME", "")
     # database uri (mongodb)
     DATABASE_URL = os.environ.get("DATABASE_URL", "")
-    AUTH_USERS = os.environ.get("AUTH_USERS")
+        # Array to store users who are authorized to use the bot
+    AUTH_USERS = set(int(x) for x in os.environ.get("AUTH_USERS", "").split())
+    # the download location, where the HTTP Server runs
