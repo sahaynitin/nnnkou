@@ -32,7 +32,7 @@ from PIL import Image
 from helper_funcs.help_Nekmo_ffmpeg import generate_screen_shots
 
 
-async def yt_dlp_call_back(bot, update):
+async def yt_dlp_call_back(bot, msg):
     cb_data = update.data
     # yt_dlp extractors
     tg_send_type, yt_dlp_format, yt_dlp_ext = cb_data.split("|")
