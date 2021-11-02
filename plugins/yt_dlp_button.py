@@ -34,10 +34,8 @@ from helper_funcs.help_Nekmo_ffmpeg import generate_screen_shots
 
 async def yt_dlp_call_back(bot, update):
     cb_data = update.data
-    # yt_dlp extractors
     tg_send_type, yt_dlp_format, yt_dlp_ext = cb_data.split("|")
-    thumb_image_path = Config.DOWNLOAD_LOCATION + \
-        "/" + str(update.from_user.id) + ".jpg"
+
     save_ytdl_json_path = Config.DOWNLOAD_LOCATION + \
         "/" + str(update.from_user.id) + ".json"
     try:
@@ -77,13 +75,11 @@ async def yt_dlp_call_back(bot, update):
             yt_dlp_url = yt_dlp_url.strip()
         if custom_file_name is not None:
             custom_file_name = custom_file_name.strip()
-        # https://stackoverflow.com/a/761825/4723940
         if yt_dlp_username is not None:
             yt_dlp_username = yt_dlp_username.strip()
         if yt_dlp_password is not None:
             yt_dlp_password = yt_dlp_password.strip()
-        logger.info(yt_dlp_url)
-        logger.info(custom_file_name)
+
     else:
         for entity in update.message.reply_to_message.entities:
             if entity.type == "text_link":
