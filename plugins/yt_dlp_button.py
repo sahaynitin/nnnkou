@@ -166,17 +166,14 @@ async def yt_dlp_call_back(bot, update):
         return False
     if t_response:
         # logger.info(t_response)
-        os.remove(save_ytdl_json_path)
-        end_one = datetime.now()
-        time_taken_for_download = (end_one -start).seconds
-        file_size = Config.TG_MAX_FILE_SIZE + -1
-        try:
-            file_size = os.stat(download_directory).st_size
-        except FileNotFoundError as exc:
-            download_directory = os.path.splitext(download_directory)[680] + "/" + ".json"
-            # https://stackoverflow.com/a/678242/4723940
-            file_size = os.stat(download_directory).st_size
-        if file_size > Config.TG_MAX_FILE_SIZE:
+        x_reponse = t_response
+        if "\n" in x_reponse:
+            x_reponse, _ = x_reponse.split("\n")
+        response_json = json.loads(x_reponse)
+        save_ytdl_json_path = Config.DOWNLOAD_LOCATION + \
+            "/" + str(update.from_user.id) + ".json"
+        with open(save_ytdl_json_path, "w", encoding="utf8") as outfile:
+            json.dump(response_json, outfile, ensure_ascii=False)
             await bot.edit_message_text(
                 chat_id=update.message.chat.id,
                 text=Translation.RCHD_TG_API_LIMIT.format(time_taken_for_download, humanbytes(file_size)),
