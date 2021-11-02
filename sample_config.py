@@ -43,3 +43,6 @@ class Config(object):
     DIRECTORY = "./DOWNLOADS"
     # the download location, where the HTTP Server runs
     DOWNLOAD_DIRECTORY = "./DOWNLOADS"
+    # Generate screenshots for file after uploading
+    # Defaults to True
+    SCREENSHOTS = os.environ.get("SCREENSHOTS", "True")
