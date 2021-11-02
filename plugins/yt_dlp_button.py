@@ -163,7 +163,7 @@ async def yt_dlp_call_back(bot, update):
             message_id=update.message.message_id,
             text=error_message
         )
-                return True
+       return False
     if t_response:
         # logger.info(t_response)
         os.remove(save_ytdl_json_path)
