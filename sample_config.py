@@ -36,3 +36,4 @@ class Config(object):
     SESSION_NAME = os.environ.get("SESSION_NAME", "")
     # database uri (mongodb)
     DATABASE_URL = os.environ.get("DATABASE_URL", "")
+    AUTH_USERS = os.environ.get("AUTH_USERS")
