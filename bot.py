@@ -21,15 +21,21 @@ from pyrogram import filters
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
+import pyrogram
+logging.getLogger("pyrogram").setLevel(logging.WARNING)
+
+
 if __name__ == "__main__" :
     # create download directory, if not exist
     if not os.path.isdir(Config.DOWNLOAD_LOCATION):
         os.makedirs(Config.DOWNLOAD_LOCATION)
-    plugins = dict(root="plugins")
-    Warrior = Clinton(
-        "@TellyurluploaderBot",
+    plugins = dict(
+        root="plugins"
+    )
+    app = pyrogram.Client(
+        "X-URL-Uploader",
         bot_token=Config.TG_BOT_TOKEN,
         api_id=Config.APP_ID,
         api_hash=Config.API_HASH,
-        plugins=plugins)
+        plugins=plugins
     Warrior.run()
