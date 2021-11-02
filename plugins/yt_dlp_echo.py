@@ -35,7 +35,7 @@ async def echo(bot, update):
     forcesub = await ForceSub(bot, update)
     if forcesub == 400:
         return
-    imog = await update.reply_text("Processing...⚡", reply_to_message_id=update.message_id)
+    imog = await update.reply_text("Processing To My Server Please Wait", reply_to_message_id=update.message_id)
     yt_dlp_username = None
     yt_dlp_password = None
     file_name = None
