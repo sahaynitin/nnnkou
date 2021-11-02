@@ -118,6 +118,5 @@ async def button(bot, update):
                 )
         elif "|" in cb_data:
             await yt_dlp_call_back(bot, update)
-        return 
         elif "=" in cb_data:
             await ddl_call_back(bot, update)
