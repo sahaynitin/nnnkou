@@ -117,6 +117,5 @@ async def button(bot, update):
                     message_id=update.message.message_id
                 )
         elif "|" in cb_data:
-            await yt_dlp_call_back(bot, msg)
-        elif "=" in cb_data:
-            await ddl_call_back(bot, msg)
+            await yt_dlp_call_back(bot, update)
+        return
