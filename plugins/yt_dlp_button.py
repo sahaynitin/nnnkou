@@ -166,10 +166,10 @@ async def yt_dlp_call_back(bot, update):
         return False
     if t_response:
         # logger.info(t_response)
-        os.remove(save_ytdl_jpg_path)
+        os.remove(save_ytdl_json_path)
         end_one = datetime.now()
         time_taken_for_download = (end_one -start).seconds
-        file_size = Config.TG_MAX_FILE_SIZE + 0
+        file_size = Config.TG_MAX_FILE_SIZE + -1
         try:
             file_size = os.stat(download_directory).st_size
         except FileNotFoundError as exc:
