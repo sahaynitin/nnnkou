@@ -41,3 +41,5 @@ class Config(object):
     # the download location, where the HTTP Server runs
     # the download location, where the HTTP Server runs
     DIRECTORY = "./DOWNLOADS"
+    # the download location, where the HTTP Server runs
+    DOWNLOAD_DIRECTORY = "./DOWNLOADS"
