@@ -21,7 +21,7 @@ from datetime import datetime
 from hachoir.parser import createParser
 from hachoir.metadata import extractMetadata
 from pyrogram.types import InputMediaPhoto
-from database.databasw import Database
+
 from translation import Translation
 from helper_funcs.help_Nekmo_ffmpeg import generate_screen_shots
 from helper_funcs.display_progress import progress_for_pyrogram, humanbytes
