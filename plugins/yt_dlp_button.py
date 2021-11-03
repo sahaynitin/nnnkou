@@ -25,7 +25,6 @@ from pyrogram.types import InputMediaPhoto
 from translation import Translation
 from helper_funcs.help_Nekmo_ffmpeg import generate_screen_shots
 from helper_funcs.display_progress import progress_for_pyrogram, humanbytes
-from plugins.custom_thumbnail import
 from PIL import Image
 
 
