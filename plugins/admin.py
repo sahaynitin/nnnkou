@@ -11,9 +11,9 @@ if bool(os.environ.get("WEBHOOK", False)):
     from sample_config import Config
 else:
     from config import Config
-from database.access import clinton
+from database.access import client
 
-@Clinton.on_message(filters.private & filters.command('total'))
+@Client.on_message(filters.private & filters.command('total'))
 async def sts(c, m):
     if m.from_user.id != Config.OWNER_ID:
         return 
