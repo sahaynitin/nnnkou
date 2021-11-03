@@ -22,7 +22,7 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserNotParticipant
-
+from database.database import Database
 
 @pyrogram.Client.on_message(pyrogram.filters.regex(pattern=".*http.*"))
 async def echo(bot, update):
