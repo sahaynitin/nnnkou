@@ -23,7 +23,7 @@ from hachoir.parser import createParser
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserNotParticipant
 
-@Client.on_callback_query()
+@pyrogram.Client.on_callback_query()
 async def catch_youtube_dldata(c, q):
     cb_data = q.data.strip()
     #print(q.message.chat.id)
