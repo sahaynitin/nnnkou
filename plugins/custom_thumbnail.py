@@ -9,7 +9,7 @@ else:
 from pyrogram import Client, filters    
 
 from translation import Translation
-from helper_funcs.database import *
+
 
 
 @Client.on_message(filters.private & filters.photo)
