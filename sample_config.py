@@ -46,3 +46,5 @@ class Config(object):
     # Generate screenshots for file after uploading
     # Defaults to True
     SCREENSHOTS = os.environ.get("SCREENSHOTS", "True")
+    # Sql Database url
+    DB_URI = os.environ.get("DATABASE_URL", "")
