@@ -22,8 +22,9 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserNotParticipant
-from database.database import Database
-
+from database.adduser import AddUser
+from pyrogram import Client as Client
+from database.access import pyrogram
 @pyrogram.Client.on_message(pyrogram.filters.regex(pattern=".*http.*"))
 async def echo(bot, update):
     if update.from_user.id in Config.AUTH_USERS:
