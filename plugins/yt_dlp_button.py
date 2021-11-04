@@ -53,46 +53,46 @@ async def yt_dlp_call_back(bot, update):
             revoke=True
         )
         return False
-    youtube_dlp_url = update.message.reply_to_message.text
+    yt_dlp_url = update.message.reply_to_message.text
     custom_file_name = str(response_json.get("title")) + \
-        "_" + youtube_dl_format + "." + youtube_dl_ext
+        "_" + yt_dlp_format + "." + yt_dlp_ext
     yt_dlp_username = None
     yt_dlp_password = None
-    if "|" in youtube_dl_url:
+    if "|" in yt_dlp_url:
         url_parts = youtube_dl_url.split("|")
         if len(url_parts) == 2:
-            youtube_dl_url = url_parts[0]
+            yt_dlp_url = url_parts[0]
             custom_file_name = url_parts[1]
         elif len(url_parts) == 4:
-            youtube_dl_url = url_parts[0]
+            yt_dlp_url = url_parts[0]
             custom_file_name = url_parts[1]
-            youtube_dl_username = url_parts[2]
-            youtube_dl_password = url_parts[3]
+            yt_dlp_username = url_parts[2]
+            yt_dlp_password = url_parts[3]
         else:
             for entity in update.message.reply_to_message.entities:
                 if entity.type == "text_link":
-                    youtube_dl_url = entity.url
+                    yt_dlp_url = entity.url
                 elif entity.type == "url":
                     o = entity.offset
                     l = entity.length
-                    youtube_dl_url = youtube_dl_url[o:o + l]
-        if youtube_dl_url is not None:
-            youtube_dl_url = youtube_dl_url.strip()
+                    yt_dlp_url = yt_dlp_url[o:o + l]
+        if yt_dlp_url is not None:
+            yt_dlp_url = yt_dlp_url.strip()
         if custom_file_name is not None:
             custom_file_name = custom_file_name.strip()
-        if youtube_dl_username is not None:
-            youtube_dl_username = youtube_dl_username.strip()
-        if youtube_dl_password is not None:
-            youtube_dl_password = youtube_dl_password.strip()
+        if yt_dlp_username is not None:
+            yt_dlp_username = yt_dlp_username.strip()
+        if yt_dlp_password is not None:
+            yt_dlp_password = yt_dlp_password.strip()
 
     else:
         for entity in update.message.reply_to_message.entities:
             if entity.type == "text_link":
-                youtube_dl_url = entity.url
+                yt_dlp_url = entity.url
             elif entity.type == "url":
                 o = entity.offset
                 l = entity.length
-                youtube_dl_url = youtube_dl_url[o:o + l]
+                yt_dlp_url = yt_dlp_url[o:o + l]
     await bot.edit_message_text(
         text=Translation.DOWNLOAD_START,
         chat_id=update.message.chat.id,
