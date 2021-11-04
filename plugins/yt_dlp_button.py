@@ -120,7 +120,7 @@ async def yt_dlp_call_back(bot, update):
         ]
     else:
         minus_f_format = yt_dlp_format
-        if "youtu" in youtube_dl_url:
+        if "youtu" in yt_dlp_url:
             minus_f_format = yt_dlp_format + "+bestaudio"
         command_to_exec = [
             "yt-dlp",
