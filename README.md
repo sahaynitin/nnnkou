@@ -1,6 +1,6 @@
 # URL-Uploader
 
-A simple url uploader bot with permenent thumbnail support
+⛔©️
 Don't Fork This Now This Repo Under Maintenance in Progress
 ```
 Scrapped some code from @SpEcHIDe's AnyDLBot  and From Clinton Abraham Url Uploader Bot Repo Repository
