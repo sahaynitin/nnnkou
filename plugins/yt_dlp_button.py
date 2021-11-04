@@ -108,40 +108,40 @@ async def yt_dlp_call_back(bot, update):
     command_to_exec = []
     if tg_send_type == "audio":
         command_to_exec = [
-            "youtube-dl",
+            "yt-dlp",
             "-c",
             "--max-filesize", str(Config.TG_MAX_FILE_SIZE),
             "--prefer-ffmpeg",
             "--extract-audio",
-            "--audio-format", youtube_dl_ext,
-            "--audio-quality", youtube_dl_format,
-            youtube_dl_url,
+            "--audio-format", yt_dlp_ext,
+            "--audio-quality", yt_dlp_format,
+            yt_dlp_url,
             "-o", download_directory
         ]
     else:
-        minus_f_format = youtube_dl_format
+        minus_f_format = yt_dlp_format
         if "youtu" in youtube_dl_url:
-            minus_f_format = youtube_dl_format + "+bestaudio"
+            minus_f_format = yt_dlp_format + "+bestaudio"
         command_to_exec = [
-            "youtube-dl",
+            "yt-dlp",
             "-c",
             "--max-filesize", str(Config.TG_MAX_FILE_SIZE),
             "--embed-subs",
             "-f", minus_f_format,
-            "--hls-prefer-ffmpeg", youtube_dl_url,
+            "--hls-prefer-ffmpeg", yt_dlp_url,
             "-o", download_directory
         ]
     if Config.HTTP_PROXY != "":
         command_to_exec.append("--proxy")
         command_to_exec.append(Config.HTTP_PROXY)
-    if youtube_dl_username is not None:
+    if yt_dlp_username is not None:
         command_to_exec.append("--username")
-        command_to_exec.append(youtube_dl_username)
-    if youtube_dl_password is not None:
+        command_to_exec.append(yt_dlp_username)
+    if yt_dlp_password is not None:
         command_to_exec.append("--password")
-        command_to_exec.append(youtube_dl_password)
+        command_to_exec.append(yt_dlp_password)
     command_to_exec.append("--no-warnings")
-    if "hotstar" in youtube_dl_url:
+    if "hotstar" in yt_dlp_url:
         command_to_exec.append("--geo-bypass-country")
         command_to_exec.append("IN")
 
